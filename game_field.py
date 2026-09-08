@@ -1,22 +1,37 @@
-from typing import Protocol
-
 import consets
 import random
 
 
 
 def generate_random_dungeon():
-    random_dungeon = []
+    board = []
     for row in range(consets.BOARD_ROWS):
         row = []
         for col in range(consets.BOARD_COLS):
             row.append("empty")
 
-        random_dungeon.append(row)
+        board.append(row)
 
-    return random_dungeon
+    board = generate_flag(board)
+
+    return board
 
 
 def create_random_mine(board):
     row = random.randint(0, consets.BOARD_ROWS - 1)
     col = random.randint(0, consets.BOARD_COLS - 1)
+
+def generate_flag(board):
+    flag_row_index = consets.flag_row
+    flag_col_index = consets.flag_col
+
+    for i in range(consets.FLAG_ROWS):
+        for j in range(consets.FLAG_COLS):
+            board[flag_row_index+i][flag_col_index+j] = "flag"
+
+    return board
+
+
+board = generate_random_dungeon()
+for row in board:
+    print(row)

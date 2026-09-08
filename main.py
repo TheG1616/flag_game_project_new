@@ -11,7 +11,9 @@ run = True
 def main():
     pygame.init()
     pygame.display.set_caption("The_Flag_Game")
-
+    x = 50
+    y = 50
+    vel = 5
 
 
     screen.screen.fill(consets.BACKGROUNDE_COLOR)
@@ -20,6 +22,20 @@ def main():
 
     while run:
         handle_user_events()
+
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_LEFT]:
+            x -= vel
+
+        if keys[pygame.K_RIGHT]:
+            x += vel
+
+        if keys[pygame.K_UP]:
+            y -= vel
+
+        if keys[pygame.K_DOWN]:
+            y += vel
 
         screen.drow_game()
 

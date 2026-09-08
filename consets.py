@@ -1,5 +1,9 @@
 
 
+BACKGROUNDE_COLOR = (0,153,0)
+Shrubs_color = (102,255,102)
+BLACK = (0,0,0)
+
 
 BOARD_ROWS = 25
 BOARD_COLS = 50

@@ -1,6 +1,8 @@
 import consets
 import random
 
+import solider
+
 
 def generate_random_dungeon():
     board = []
@@ -19,17 +21,17 @@ def generate_mines(board, flag_row_index, flag_col_index):
     mine_row = consets.MINE_ROWS
     mine_col = consets.MINE_COLS
     for i in range(mine_count):
-        row = random.randint(0, consets.BOARD_ROWS - 1)
-        col = random.randint(0, consets.BOARD_COLS - 1)
+        while True:
+            row = random.randint(0, consets.BOARD_ROWS - 1)
+            col = random.randint(0, consets.BOARD_COLS - 1)
+            if check_available_mines(board, row, col, mine_row, mine_col):
+                break
 
-        if check_available_mines(board, row, col,mine_row,mine_col):
-            for k in range(mine_row):
-                for l in range(mine_col):
-                    board[row + k][col + l] = "mine"
+        for k in range(mine_row):
+            for l in range(mine_col):
+                board[row + k][col + l] = "mine"
 
 
-        else:
-            i -= 1
 
     return board
 
@@ -37,7 +39,7 @@ def check_available_mines(board, row, col,mine_row,mine_col):
     for i in range(mine_row):
         for j in range(mine_col):
             try:
-                if board[row + i][col + j] == "flag":
+                if board[row + i][col + j] != "empty":
                     return False
             except IndexError:
                 return False
@@ -58,7 +60,11 @@ def generate_flag_and_mines(board):
     return board
 
 
-
 board = generate_random_dungeon()
 for row in board:
     print(row)
+
+
+ro = int(input("row"))
+co = int(input("col"))
+print(solider.move_solider(board,3,0,ro,co))

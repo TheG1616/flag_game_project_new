@@ -19,7 +19,7 @@ def main():
     screen.screen.fill(consets.BACKGROUNDE_COLOR)
     screen.drow_grass()
     screen.drow_mines(game_field.generate_random_dungeon())
-
+    screen.drow_mode_night(game_field.generate_random_dungeon())
     while run:
         handle_user_events()
 
@@ -36,6 +36,8 @@ def main():
 
         if keys[pygame.K_DOWN]:
             y += vel
+
+
 
         screen.drow_game()
 

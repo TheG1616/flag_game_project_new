@@ -8,7 +8,11 @@ def generate_random_dungeon():
     for row in range(consets.BOARD_ROWS):
         row = []
         for col in range(consets.BOARD_COLS):
-            row.append("empty")
+            rand_val = random.random()
+            if rand_val < 0.3:
+                row.append("mine")
+            else:
+                row.append("empty")
 
         board.append(row)
 
@@ -16,10 +20,6 @@ def generate_random_dungeon():
 
     return board
 
-
-def create_random_mine(board):
-    row = random.randint(0, consets.BOARD_ROWS - 1)
-    col = random.randint(0, consets.BOARD_COLS - 1)
 
 def generate_flag(board):
     flag_row_index = consets.flag_row

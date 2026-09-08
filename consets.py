@@ -35,14 +35,20 @@ START_MSG = ("Welcome to The Flag game. "
 
 #==============images===================
 SOLIDER_IMG = "images/soldier.png"
+SOLIDER_SIZE = (75,75)
 GRASS_IMG = "images/grass.png"
+GRASS_SIZE = (50, 50)
+
 MINE_IMG = "images/mine.png"
+MINE_SIZE = (55,15)
 EXPLOTION_IMG = "images/explotion.png"
 INJURY_ING = "images/injury.png"
 TELEPORT_ING = "images/teleport.png"
 SNAKE_IMG = "images/snake.png"
 GUARD_IMG = "images/guard.png"
 FLAG_IMG = "images/flag.png"
+FLAG_SIZE = (75 ,75)
+
 SOLDIER_NIGHT_IMG = "images/soldier_night.png"
 
 
@@ -58,3 +64,7 @@ WIN_FONT_SIZE = LOSE_FONT_SIZE
 WIN_COLOR = (89, 89, 89)
 WIN_LOCATION = \
     (0.2 * WINDOW_WIDTH, WINDOW_HEIGHT / 2 - (WIN_FONT_SIZE / 2))
+
+
+flag_row_SIZE = 20 * FLAG_ROWS
+flag_col_SIZE = 20 * FLAG_COLS

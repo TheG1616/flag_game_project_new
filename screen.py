@@ -45,7 +45,7 @@ def drow_grass():
 def drow_mines(matrix):
     for row in range(len(matrix)):
         for col in range(len(matrix[row])):
-            tuple_size = (consets.CELL_SIZE * row, consets.CELL_SIZE * col)
+            tuple_size = (consets.CELL_SIZE * col , consets.CELL_SIZE * row)
             if matrix[row][col] == "mine":
                 drow_image(create_image(consets.MINE_IMG, consets.MINE_SIZE), tuple_size)
 
@@ -53,8 +53,14 @@ def drow_game():
     draw_message(consets.START_MSG, 15, consets.WHITE, (22,22))
 
 
+def drow_mode_night(matrix):
+    screen.fill(consets.BLACK)
+
 
     drow_image(create_image(consets.SOLIDER_IMG, consets.SOLIDER_SIZE), (0,0))
+
+
+
     drow_image(create_image(consets.FLAG_IMG, consets.FLAG_SIZE), (consets.WINDOW_WIDTH - consets.CELL_SIZE * consets.FLAG_ROWS, consets.WINDOW_HEIGHT - consets.CELL_SIZE * consets.FLAG_COLS))
 
     drow_image(create_image(consets.MINE_IMG, consets.MINE_SIZE), (300, 300))

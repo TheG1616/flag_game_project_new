@@ -65,6 +65,6 @@ for row in board:
     print(row)
 
 
-ro = int(input("row"))
-co = int(input("col"))
-print(solider.move_solider(board,3,0,ro,co))
+# ro = int(input("row"))
+# co = int(input("col"))
+# print(solider.move_solider(board,3,0,ro,co))

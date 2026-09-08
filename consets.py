@@ -1,8 +1,8 @@
 import images
 
 BACKGROUNDE_COLOR = (0,153,0)
-Shrubs_color = (102,255,102)
 BLACK = (0,0,0)
+WHITE = (255,255,255)
 
 
 BOARD_ROWS = 25
@@ -27,6 +27,8 @@ MINES_COUNT = 20
 MINE_ROWS = 1
 MINE_COLS = 3
 
+
+FONT_NAME = "Calibri"
 START_MSG = ("Welcome to The Flag game. "
                                             "Have Fun!")
 

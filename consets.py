@@ -27,6 +27,10 @@ MINES_COUNT = 20
 MINE_ROWS = 1
 MINE_COLS = 3
 
+START_MSG = ("Welcome to The Flag game. "
+                                            "Have Fun!")
+
+
 #==============images===================
 SOLIDER_IMG = "images/soldier.png"
 GRASS_IMG = "images/grass.png"

@@ -1,5 +1,14 @@
 import pygame
+from pygame.examples.headless_no_windows_needed import screen
+
 import consets
+
+def create_image(img, size):
+    #img = כתובת URL
+    # size = טאפל של מיקום התמונה
+    image = pygame.image.load(img)
+    sized_image = pygame.transform.scale(image, size)
+
 
 
 def drow_image(img):
@@ -21,4 +30,5 @@ def draw_win_message():
                  consets.WIN_COLOR, consets.WIN_LOCATION)
 
 def drow_game():
-    pass
+    screen.fill(consets.BACKGROUNDE_COLOR)
+    drow_image("images/grass.png", )

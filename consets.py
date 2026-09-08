@@ -1,4 +1,4 @@
-
+import images
 
 BACKGROUNDE_COLOR = (0,153,0)
 Shrubs_color = (102,255,102)
@@ -26,6 +26,19 @@ flag_col = BOARD_COLS - FLAG_COLS
 MINES_COUNT = 20
 MINE_ROWS = 1
 MINE_COLS = 3
+
+#==============images===================
+SOLIDER_IMG = "images/soldier.png"
+GRASS_IMG = "images/grass.png"
+MINE_IMG = "images/mine.png"
+EXPLOTION_IMG = "images/explotion.png"
+INJURY_ING = "images/injury.png"
+TELEPORT_ING = "images/teleport.png"
+SNAKE_IMG = "images/snake.png"
+GUARD_IMG = "images/guard.png"
+FLAG_IMG = "images/flag.png"
+SOLDIER_NIGHT_IMG = "images/soldier_night.png"
+
 
 
 LOSE_MESSAGE = "You Lose"

@@ -57,12 +57,10 @@ def drow_mode_night(matrix):
     drow_mines(matrix)
     pygame.display.flip()
 
-def drow_game():
+def drow_game(player_r, player_c):
     draw_message(consets.START_MSG, 15, consets.WHITE, (22,22))
 
-
-
-    drow_image(create_image(consets.SOLIDER_IMG, consets.SOLIDER_SIZE), (0,0))
+    drow_image(create_image(consets.SOLIDER_IMG, consets.SOLIDER_SIZE), (player_c, player_r))
 
 
 

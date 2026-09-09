@@ -36,10 +36,12 @@ def step_on_flag(board, player_r, player_c):
     return False
 
 def step_on_mine(board, player_r, player_c):
-    for i in range(consets.SOLDIER_COLS):
-        if board[player_r][player_c+i] == "mine":
-            return True
-
+    try:
+        for i in range(consets.SOLDIER_COLS):
+            if board[player_r][player_c+i] == "mine":
+                return True
+    except IndexError:
+        return False
     return False
 
 

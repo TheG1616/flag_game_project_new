@@ -17,7 +17,7 @@ def main():
     player_r = 3
     player_c = 0
 
-    screen.drow_grass()
+    grass = screen.make_grass()
 
     while run:
 
@@ -32,7 +32,7 @@ def main():
             screen.draw_win_message()
             run = False
 
-        screen.drow_game((player_r -3)* consets.CELL_SIZE , player_c * consets.CELL_SIZE)
+        screen.drow_game((player_r -3)* consets.CELL_SIZE , player_c * consets.CELL_SIZE, grass)
 
 
 

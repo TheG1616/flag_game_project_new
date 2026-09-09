@@ -37,11 +37,17 @@ def draw_win_message():
     draw_message(consets.WIN_MESSAGE, consets.WIN_FONT_SIZE,
                  consets.WIN_COLOR, consets.WIN_LOCATION)
 
-def drow_grass():
+def make_grass():
+    lst_index = []
     for i in range(20):
         x = random.randrange(0,consets.WINDOW_WIDTH)
         y = random.randrange(0, consets.WINDOW_HEIGHT)
-        drow_image(create_image(consets.GRASS_IMG, consets.GRASS_SIZE), (x,y))
+        lst_index.append((x,y))
+    return lst_index
+
+def drow_grass(lst):
+    for i in lst:
+        drow_image(create_image(consets.GRASS_IMG, consets.GRASS_SIZE), i)
 
 
 def drow_mines(matrix):
@@ -68,7 +74,6 @@ def drow_all_for_space_key(board, player_r, player_c):
     drow_mode_night(board, player_r, player_c)
     sleep(1)
     screen.fill(consets.BACKGROUNDE_COLOR)
-    drow_grass()
     drow_image(create_image(consets.FLAG_IMG, consets.FLAG_SIZE),
                (consets.WINDOW_WIDTH - consets.CELL_SIZE * consets.FLAG_ROWS,
                 consets.WINDOW_HEIGHT - consets.CELL_SIZE * consets.FLAG_COLS))
@@ -82,8 +87,9 @@ def drow_start():
                (consets.WINDOW_WIDTH - consets.CELL_SIZE * consets.FLAG_ROWS,
                 consets.WINDOW_HEIGHT - consets.CELL_SIZE * consets.FLAG_COLS))
 
-def drow_game(player_r, player_c):
+def drow_game(player_r, player_c, grass):
     screen.fill(consets.BACKGROUNDE_COLOR)
+    drow_grass(grass)
     drow_image(create_image(consets.FLAG_IMG, consets.FLAG_SIZE),
                (consets.WINDOW_WIDTH - consets.CELL_SIZE * consets.FLAG_ROWS,
                 consets.WINDOW_HEIGHT - consets.CELL_SIZE * consets.FLAG_COLS))

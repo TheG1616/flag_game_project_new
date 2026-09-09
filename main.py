@@ -27,12 +27,12 @@ def main():
                                                             player_c)
         if mine:
             screen.draw_lose_message()
-            run = False
+
         if flag:
             screen.draw_win_message()
             run = False
 
-        screen.drow_game(player_r * consets.CELL_SIZE, player_c * consets.CELL_SIZE)
+        screen.drow_game((player_r -3)* consets.CELL_SIZE , player_c * consets.CELL_SIZE)
 
 
 

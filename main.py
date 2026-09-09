@@ -62,7 +62,7 @@ def handle_user_events(board, player_r, player_c):
 
             if event.key == pygame.K_SPACE:
                 screen.drow_all_for_space_key(board, player_r, player_c)
-
+                pygame.event.clear()
             if event.key == pygame.K_UP:
                 dr = -1
             elif event.key == pygame.K_DOWN:

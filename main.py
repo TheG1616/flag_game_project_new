@@ -10,13 +10,13 @@ run = True
 
 
 def main():
+    global run
     pygame.init()
     screen.drow_start()
     board = game_field.generate_random_dungeon()
     player_r = 3
     player_c = 0
 
-    screen.screen.fill(consets.BACKGROUNDE_COLOR)
     screen.drow_grass()
 
     while run:
@@ -26,7 +26,12 @@ def main():
         player_r, player_c, mine, flag = handle_user_events(board, player_r,
                                                             player_c)
         if mine:
-            print("Mine")
+            screen.draw_lose_message()
+            run = False
+        if flag:
+            screen.draw_win_message()
+            run = False
+
         screen.drow_game(player_r * consets.CELL_SIZE, player_c * consets.CELL_SIZE)
 
 
@@ -43,12 +48,15 @@ def handle_user_events(board, player_r, player_c):
         if event.type == pygame.QUIT:
             run = False
 
+
+
         if event.type == pygame.KEYDOWN:
             dr, dc = 0, 0
+
             if event.key == pygame.K_SPACE:
                 screen.drow_all_for_space_key(board, player_r, player_c)
 
-            elif event.key == pygame.K_UP:
+            if event.key == pygame.K_UP:
                 dr = -1
             elif event.key == pygame.K_DOWN:
                 dr = 1

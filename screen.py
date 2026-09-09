@@ -83,7 +83,10 @@ def drow_start():
                 consets.WINDOW_HEIGHT - consets.CELL_SIZE * consets.FLAG_COLS))
 
 def drow_game(player_r, player_c):
-
+    screen.fill(consets.BACKGROUNDE_COLOR)
+    drow_image(create_image(consets.FLAG_IMG, consets.FLAG_SIZE),
+               (consets.WINDOW_WIDTH - consets.CELL_SIZE * consets.FLAG_ROWS,
+                consets.WINDOW_HEIGHT - consets.CELL_SIZE * consets.FLAG_COLS))
     drow_soldier(consets.SOLIDER_IMG, player_r, player_c)
 
 

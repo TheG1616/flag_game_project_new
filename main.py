@@ -15,7 +15,7 @@ def main():
     screen.drow_start()
     board = game_field.generate_random_dungeon()
     player_r = 3
-    player_c = 1
+    player_c = 0
 
     screen.drow_grass()
 

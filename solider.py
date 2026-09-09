@@ -4,9 +4,10 @@ import consets
 def move_solider(board, player_r, player_c, dr, dc):
     flag = False
     mine = False
-    if check_board_limit(board, player_r, player_c, dr, dc):
-        new_player_r = player_r + dr
-        new_player_c = player_c + dc
+    new_player_r = player_r + dr
+    new_player_c = player_c + dc
+    if check_board_limit(board, new_player_r, new_player_c, dr, dc):
+
         if step_on_flag(board, new_player_r, new_player_c):
             flag = True
         elif step_on_mine(board, new_player_r, new_player_c):

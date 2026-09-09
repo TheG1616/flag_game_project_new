@@ -49,7 +49,7 @@ GUARD_IMG = "images/guard.png"
 FLAG_IMG = "images/flag.png"
 FLAG_SIZE = (75 ,75)
 
-SOLDIER_NIGHT_IMG = "images/soldier_night.png"
+SOLDIER_NIGHT_IMG = "images/soldier_nigth.png"
 
 
 

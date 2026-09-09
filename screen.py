@@ -1,6 +1,8 @@
+from time import sleep
+
 import pygame
 import random
-
+import game_field
 import consets
 
 screen = pygame.display.set_mode(
@@ -49,22 +51,36 @@ def drow_mines(matrix):
             if matrix[row][col] == "mine":
                 drow_image(create_image(consets.MINE_IMG, consets.MINE_SIZE), tuple_size)
 
-def drow_mode_night(matrix):
+def drow_mode_night(matrix,player_r, player_c):
     screen.fill(consets.BLACK)
     for i in range(1,len(matrix)):
         for j in range(1,len(matrix[i])):
             pygame.draw.rect(screen, (0,255,0), ( j*consets.CELL_SIZE-22,  i*consets.CELL_SIZE-22,  j*consets.CELL_SIZE,  i*consets.CELL_SIZE), 1 )
     drow_mines(matrix)
+    drow_soldier(consets.SOLDIER_NIGHT_IMG, player_r, player_c)
     pygame.display.flip()
 
+def drow_soldier(soldier_img, player_r, player_c):
+    drow_image(create_image(soldier_img, consets.SOLIDER_SIZE), (player_c, player_r))
+
+
+def drow_all_for_space_key(board, player_r, player_c):
+    drow_mode_night(board, player_r, player_c)
+    sleep(2)
+    screen.fill(consets.BACKGROUNDE_COLOR)
+    drow_grass()
+
+
+def drow_start():
+    pygame.display.set_caption("The_Flag_Game")
+    draw_message(consets.START_MSG, 15, consets.WHITE, (22, 22))
+    drow_image(create_image(consets.FLAG_IMG, consets.FLAG_SIZE),
+               (consets.WINDOW_WIDTH - consets.CELL_SIZE * consets.FLAG_ROWS,
+                consets.WINDOW_HEIGHT - consets.CELL_SIZE * consets.FLAG_COLS))
+
 def drow_game(player_r, player_c):
-    draw_message(consets.START_MSG, 15, consets.WHITE, (22,22))
 
-    drow_image(create_image(consets.SOLIDER_IMG, consets.SOLIDER_SIZE), (player_c, player_r))
-
-
-
-    drow_image(create_image(consets.FLAG_IMG, consets.FLAG_SIZE), (consets.WINDOW_WIDTH - consets.CELL_SIZE * consets.FLAG_ROWS, consets.WINDOW_HEIGHT - consets.CELL_SIZE * consets.FLAG_COLS))
+    drow_soldier(consets.SOLIDER_IMG, player_r, player_c)
 
 
 

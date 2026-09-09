@@ -1,4 +1,5 @@
 from importlib.metadata.diagnose import run
+from time import sleep
 
 import pygame
 import consets
@@ -10,17 +11,18 @@ run = True
 
 def main():
     pygame.init()
-    pygame.display.set_caption("The_Flag_Game")
+    screen.drow_start()
     board = game_field.generate_random_dungeon()
     player_r = 3
     player_c = 0
 
-
     screen.screen.fill(consets.BACKGROUNDE_COLOR)
     screen.drow_grass()
 
-    screen.drow_mode_night(game_field.generate_random_dungeon())
     while run:
+
+
+
         player_r, player_c, mine, flag = handle_user_events(board, player_r,
                                                             player_c)
         if mine:
@@ -43,8 +45,9 @@ def handle_user_events(board, player_r, player_c):
 
         if event.type == pygame.KEYDOWN:
             dr, dc = 0, 0
-            if event.key == pygame.K_KP_ENTER:
-                pass
+            if event.key == pygame.K_SPACE:
+                screen.drow_all_for_space_key(board, player_r, player_c)
+
             elif event.key == pygame.K_UP:
                 dr = -1
             elif event.key == pygame.K_DOWN:

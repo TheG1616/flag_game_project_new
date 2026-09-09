@@ -21,7 +21,7 @@ def move_solider(board, player_r, player_c, dr, dc):
 
 
 def check_board_limit(board, player_r, player_c, dr, dc):
-        if player_r - 3 + dr < 0 or player_c + dc < 0 or player_c + consets.SOLDIER_COLS -1+ dc >consets.BOARD_COLS or player_r+dr > consets.BOARD_ROWS:
+        if player_r - 3 + dr < -1 or player_c + dc < -2 or player_c + consets.SOLDIER_COLS + dc >consets.BOARD_COLS or player_r+dr > consets.BOARD_ROWS:
             return False
 
         return True

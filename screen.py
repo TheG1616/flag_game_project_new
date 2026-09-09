@@ -54,9 +54,11 @@ def drow_mines(matrix):
     for row in range(len(matrix)):
         for col in range(len(matrix[row])):
             tuple_size = (consets.CELL_SIZE * col , consets.CELL_SIZE * row)
-            if matrix[row][col] == "mine":
-                drow_image(create_image(consets.MINE_IMG, consets.MINE_SIZE), tuple_size)
-
+            try:
+                if matrix[row][col] == "mine" and matrix[row][col-1]== "mine" and matrix[row][col+1]== "mine":
+                    drow_image(create_image(consets.MINE_IMG, consets.MINE_SIZE), tuple_size)
+            except IndexError:
+                pass
 def drow_mode_night(matrix,player_r, player_c):
     screen.fill(consets.BLACK)
     for i in range(1,len(matrix)):

@@ -39,7 +39,7 @@ def check_available_mines(board, row, col,mine_row,mine_col):
     for i in range(mine_row):
         for j in range(mine_col):
             try:
-                if board[row + i][col + j] != "empty":
+                if board[row + i][col + j] != "empty" or (col + j < 3 and row + i < 4):
                     return False
             except IndexError:
                 return False

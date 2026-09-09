@@ -87,13 +87,19 @@ def drow_start():
                (consets.WINDOW_WIDTH - consets.CELL_SIZE * consets.FLAG_ROWS,
                 consets.WINDOW_HEIGHT - consets.CELL_SIZE * consets.FLAG_COLS))
 
-def drow_game(player_r, player_c, grass):
+def drow_game(player_r, player_c, grass,mine,flag):
     screen.fill(consets.BACKGROUNDE_COLOR)
     drow_grass(grass)
     drow_image(create_image(consets.FLAG_IMG, consets.FLAG_SIZE),
                (consets.WINDOW_WIDTH - consets.CELL_SIZE * consets.FLAG_ROWS,
                 consets.WINDOW_HEIGHT - consets.CELL_SIZE * consets.FLAG_COLS))
     drow_soldier(consets.SOLIDER_IMG, player_r, player_c)
+
+    if mine:
+        draw_lose_message()
+    if flag:
+        draw_win_message()
+
 
 
 

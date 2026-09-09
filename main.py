@@ -16,23 +16,30 @@ def main():
     board = game_field.generate_random_dungeon()
     player_r = 3
     player_c = 0
-
+    state = "run"
     grass = screen.make_grass()
 
     while run:
 
 
-
-        player_r, player_c, mine, flag = handle_user_events(board, player_r,
+        if state == "run":
+            player_r, player_c, mine, flag = handle_user_events(board, player_r,
                                                             player_c)
+
+            screen.drow_game((player_r -3)* consets.CELL_SIZE , player_c * consets.CELL_SIZE, grass,mine,flag)
+
         if mine:
             screen.draw_lose_message()
+            state = "other"
+            sleep(3)
+            run = False
+
 
         if flag:
             screen.draw_win_message()
+            state = "other"
+            sleep(3)
             run = False
-
-        screen.drow_game((player_r -3)* consets.CELL_SIZE , player_c * consets.CELL_SIZE, grass)
 
 
 

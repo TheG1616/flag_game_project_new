@@ -63,7 +63,7 @@ def drow_mode_night(matrix,player_r, player_c):
     screen.fill(consets.BLACK)
     for i in range(1,len(matrix)):
         for j in range(1,len(matrix[i])):
-            pygame.draw.rect(screen, (0,255,0), ( j*consets.CELL_SIZE-22,  i*consets.CELL_SIZE-22,  j*consets.CELL_SIZE,  i*consets.CELL_SIZE), 1 )
+            pygame.draw.rect(screen, consets.BACKGROUNDE_COLOR, ( j*consets.CELL_SIZE-22,  i*consets.CELL_SIZE-22,  j*consets.CELL_SIZE,  i*consets.CELL_SIZE), 1 )
     drow_soldier(consets.SOLDIER_NIGHT_IMG, (player_r-3)* consets.CELL_SIZE , player_c* consets.CELL_SIZE )
     drow_mines(matrix)
     pygame.display.flip()

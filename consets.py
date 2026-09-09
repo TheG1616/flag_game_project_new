@@ -40,7 +40,7 @@ GRASS_IMG = "images/grass.png"
 GRASS_SIZE = (50, 50)
 
 MINE_IMG = "images/mine.png"
-MINE_SIZE = (55,15)
+MINE_SIZE = (60,17)
 EXPLOTION_IMG = "images/explotion.png"
 INJURY_ING = "images/injury.png"
 TELEPORT_ING = "images/teleport.png"
